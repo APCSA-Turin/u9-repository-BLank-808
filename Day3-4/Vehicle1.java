@@ -28,4 +28,19 @@ public class Vehicle1 {
     public void changePassengers(int X){
       passengers+= X;
     }
+
+    public void setTollFee(double newFee){
+      tollFee=newFee;
+    }
+
+    public void printInfo(){
+      System.out.println("LicencePlate: " + getLicensePlate());
+      System.out.println("TollFee: " + getTollFee());
+      System.out.println("Passengers: " + getPassengers());
+    }
+
+    public void honk(){
+      System.out.println("Beep Beep");
+    }
+
   }

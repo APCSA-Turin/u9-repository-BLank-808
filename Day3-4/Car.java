@@ -31,4 +31,35 @@ public class Car extends Vehicle1 {
         }
         return false;
     }
+
+    public void applyDiscount(){
+      if(electric&&!discountApplied){
+        discountApplied=true;
+        setTollFee(getTollFee()*.5);
+      }
+    }
+
+    public void setDiscount(boolean b){
+      discountApplied=b;
+    }
+
+    public void printInfo() {
+      super.printInfo();
+      System.out.println("Electric? " + isElectric());
+      System.out.println("Discount applied? " + isDiscountApplied());
+    }
+
+    @Override
+    public double calculateTollPrice() {
+        if(getPassengers()<4){
+        return super.calculateTollPrice();
+        }else{
+          return getTollFee()*4;
+        }
+    }
+
+    @Override
+    public void honk() {
+      System.out.println("Honk");
+    }
   }
